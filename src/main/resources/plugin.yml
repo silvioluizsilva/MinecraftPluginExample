@@ -1,0 +1,16 @@
+name: PluginExample
+version: '${project.version}'
+main: br.net.silvioluizsilva.pluginexample.PluginExample
+description: Exemplo completo de plugin consumidor do PluginBase.
+author: "Sílvio Luiz da Silva"
+website: https://github.com/silvioluizsilva
+api-version: '26.2'
+folia-supported: false
+
+# Plugin Bukkit: o Paper carrega o PluginBase antes deste plugin.
+depend: [PluginBase]
+
+permissions:
+  pluginexample.command.hello:
+    description: Permite executar o comando de exemplo.
+    default: true
