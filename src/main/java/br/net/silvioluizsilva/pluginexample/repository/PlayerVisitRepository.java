@@ -34,11 +34,10 @@ public final class PlayerVisitRepository {
      */
     public long increment(UUID playerId, String playerName) {
         return database.transaction(connection -> {
-            String upsertSql = """
-                    INSERT INTO %s (player_uuid, player_name, visits)
-                    VALUES (?, ?, 1)
-                    ON DUPLICATE KEY UPDATE player_name = VALUES(player_name), visits = visits + 1
-                    """.formatted(playersTable);
+            String upsertSql = ("INSERT INTO %s (player_uuid, player_name, visits)%n"
+                    + "VALUES (?, ?, 1)%n"
+                    + "ON DUPLICATE KEY UPDATE player_name = VALUES(player_name), visits = visits + 1%n")
+                    .formatted(playersTable);
             try (PreparedStatement upsert = connection.prepareStatement(upsertSql)) {
                 upsert.setString(1, playerId.toString());
                 upsert.setString(2, playerName);

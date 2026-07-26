@@ -1,26 +1,20 @@
 # PluginExample
 
-Projeto consumidor completo para estudar e iniciar novos plugins baseados no PluginBase `0.0.1-beta5`.
+Projeto consumidor completo para estudar e iniciar novos plugins baseados no PluginBase `0.0.1`.
 
 ## Requisitos
 
-- Java 25;
+- JDK 25 ou 26, mantendo compatibilidade de bytecode com Java 25;
 - Maven 3.9.6 ou superior;
 - Paper API `26.2.build.65-beta`;
-- PluginBase `0.0.1` instalado no servidor e no repositório Maven local.
+- acesso de leitura ao GitHub Packages do PluginBase.
 
 ## Compilação
 
-Na pasta do PluginBase, publique a dependência local:
+Configure no Maven um token GitHub com `read:packages` para o repositório `silvioluizsilva/MinecraftPluginBase`. Depois, nesta pasta:
 
 ```text
-mvn clean install
-```
-
-Depois, nesta pasta:
-
-```text
-mvn clean package
+mvn clean verify
 ```
 
 O arquivo será criado em `target/pluginexample-0.0.1.jar`.
@@ -28,7 +22,7 @@ O arquivo será criado em `target/pluginexample-0.0.1.jar`.
 No servidor, instale os dois arquivos na pasta `plugins`:
 
 ```text
-PluginBase-0.0.1-beta5.jar
+pluginbase-0.0.1.jar
 pluginexample-0.0.1.jar
 ```
 
