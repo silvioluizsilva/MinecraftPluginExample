@@ -1,4 +1,4 @@
-prefix: "<gray>[<aqua>AstExample</aqua>]</gray> "
+prefix: "<gray>[<aqua>PluginExample</aqua>]</gray> "
 hello: "<green>Hello, <name>!</green> <gray>You have joined <visits> time(s).</gray>"
 database-disabled: "<yellow>The shared database is disabled; this visit will not be persisted.</yellow>"
 internal-error: "<red>The operation could not be completed.</red>"

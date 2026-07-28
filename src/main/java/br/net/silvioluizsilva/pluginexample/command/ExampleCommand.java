@@ -1,6 +1,6 @@
-package br.net.silvioluizsilva.astexample.command;
+package br.net.silvioluizsilva.pluginexample.command;
 
-import br.net.silvioluizsilva.astexample.service.GreetingService;
+import br.net.silvioluizsilva.pluginexample.service.GreetingService;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import io.papermc.paper.command.brigadier.CommandSourceStack;
 import io.papermc.paper.command.brigadier.Commands;
@@ -18,15 +18,15 @@ public final class ExampleCommand {
     }
 
     /**
-     * Cria a árvore do comando {@code /astexample hello}.
+     * Cria a árvore do comando {@code /pluginexample hello}.
      *
      * @param serviceSupplier fornecedor da regra de negócio inicializada
      * @return árvore Brigadier
      */
     public static LiteralArgumentBuilder<CommandSourceStack> create(Supplier<GreetingService> serviceSupplier) {
         Objects.requireNonNull(serviceSupplier, "serviceSupplier");
-        return Commands.literal("astexample")
-                .requires(source -> source.getSender().hasPermission("astexample.command.hello"))
+        return Commands.literal("pluginexample")
+                .requires(source -> source.getSender().hasPermission("pluginexample.command.hello"))
                 .then(Commands.literal("hello").executes(context -> {
                     if (context.getSource().getSender() instanceof Player player) {
                         serviceSupplier.get().greet(player);

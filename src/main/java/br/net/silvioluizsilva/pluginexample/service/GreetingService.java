@@ -1,11 +1,11 @@
-package br.net.silvioluizsilva.astexample.service;
+package br.net.silvioluizsilva.pluginexample.service;
 
-import br.net.silvioluizsilva.astatinecore.api.AstatineCoreApi;
-import br.net.silvioluizsilva.astatinecore.api.DatabaseAccess;
-import br.net.silvioluizsilva.astexample.AstExample;
-import br.net.silvioluizsilva.astexample.language.ExampleMessages;
-import br.net.silvioluizsilva.astexample.database.ExampleMigration;
-import br.net.silvioluizsilva.astexample.repository.PlayerVisitRepository;
+import br.net.silvioluizsilva.pluginbase.api.PluginBaseApi;
+import br.net.silvioluizsilva.pluginbase.api.DatabaseAccess;
+import br.net.silvioluizsilva.pluginexample.PluginExample;
+import br.net.silvioluizsilva.pluginexample.language.ExampleMessages;
+import br.net.silvioluizsilva.pluginexample.database.ExampleMigration;
+import br.net.silvioluizsilva.pluginexample.repository.PlayerVisitRepository;
 import org.bukkit.entity.Player;
 
 import java.util.Map;
@@ -18,8 +18,8 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public final class GreetingService {
 
-    private final AstExample plugin;
-    private final AstatineCoreApi api;
+    private final PluginExample plugin;
+    private final PluginBaseApi api;
     private final PlayerVisitRepository repository;
     private final ExampleMessages messages;
     private final DatabaseAccess database;
@@ -30,14 +30,14 @@ public final class GreetingService {
      * Cria o serviço de saudações.
      *
      * @param plugin plugin consumidor
-     * @param api API do AstatineCore
+     * @param api API do PluginBase
      * @param repository repositório de visitas
      * @param messages mensagens traduzidas
      * @param migration migração recuperável do consumidor
      */
     public GreetingService(
-            AstExample plugin,
-            AstatineCoreApi api,
+            PluginExample plugin,
+            PluginBaseApi api,
             PlayerVisitRepository repository,
             ExampleMessages messages,
             ExampleMigration migration

@@ -6,36 +6,36 @@
 
     <parent>
         <groupId>br.net.silvioluizsilva</groupId>
-        <artifactId>astatinecore-build-parent</artifactId>
-        <version>0.1.1</version>
-        <relativePath>../AstatineCore/build-parent/pom.xml</relativePath>
+        <artifactId>pluginbase-build-parent</artifactId>
+        <version>0.0.1</version>
+        <relativePath>../PluginBase/build-parent/pom.xml</relativePath>
     </parent>
 
-    <artifactId>astexample</artifactId>
+    <artifactId>pluginexample</artifactId>
     <packaging>jar</packaging>
 
-    <name>AstExample</name>
-    <description>Plugin consumidor de exemplo para o AstatineCore.</description>
+    <name>PluginExample</name>
+    <description>Plugin consumidor de exemplo para o PluginBase.</description>
 
     <distributionManagement>
         <repository>
             <id>github</id>
-            <name>GitHub Packages - MinecraftAstExample</name>
-            <url>https://maven.pkg.github.com/silvioluizsilva/MinecraftAstExample</url>
+            <name>GitHub Packages - MinecraftPluginExample</name>
+            <url>https://maven.pkg.github.com/silvioluizsilva/MinecraftPluginExample</url>
         </repository>
     </distributionManagement>
 
     <properties>
         <paper.version>26.2.build.65-beta</paper.version>
-        <astatinecore.version>0.1.1</astatinecore.version>
+        <pluginbase.version>0.0.1</pluginbase.version>
         <junit.version>5.13.4</junit.version>
         <mockito.version>5.20.0</mockito.version>
     </properties>
 
     <repositories>
         <repository>
-            <id>github-astatinecore</id>
-            <url>https://maven.pkg.github.com/silvioluizsilva/MinecraftAstatineCore</url>
+            <id>github-pluginbase</id>
+            <url>https://maven.pkg.github.com/silvioluizsilva/MinecraftPluginBase</url>
         </repository>
     </repositories>
 
@@ -48,8 +48,8 @@
         </dependency>
         <dependency>
             <groupId>br.net.silvioluizsilva</groupId>
-            <artifactId>astatinecore</artifactId>
-            <version>${astatinecore.version}</version>
+            <artifactId>pluginbase</artifactId>
+            <version>${pluginbase.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>

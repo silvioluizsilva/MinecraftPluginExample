@@ -1,6 +1,6 @@
-package br.net.silvioluizsilva.astexample.database;
+package br.net.silvioluizsilva.pluginexample.database;
 
-import br.net.silvioluizsilva.astatinecore.api.DatabaseAccess;
+import br.net.silvioluizsilva.pluginbase.api.DatabaseAccess;
 import org.bukkit.plugin.Plugin;
 import org.junit.jupiter.api.Test;
 

@@ -1,4 +1,4 @@
-package br.net.silvioluizsilva.astexample.config;
+package br.net.silvioluizsilva.pluginexample.config;
 
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.junit.jupiter.api.Test;

@@ -1,4 +1,4 @@
-package br.net.silvioluizsilva.astexample.language;
+package br.net.silvioluizsilva.pluginexample.language;
 
 import org.bukkit.command.CommandSender;
 import org.bukkit.Bukkit;

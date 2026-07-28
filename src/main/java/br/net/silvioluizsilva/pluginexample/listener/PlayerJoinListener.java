@@ -1,7 +1,7 @@
-package br.net.silvioluizsilva.astexample.listener;
+package br.net.silvioluizsilva.pluginexample.listener;
 
-import br.net.silvioluizsilva.astexample.config.ExampleConfig;
-import br.net.silvioluizsilva.astexample.service.GreetingService;
+import br.net.silvioluizsilva.pluginexample.config.ExampleConfig;
+import br.net.silvioluizsilva.pluginexample.service.GreetingService;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
