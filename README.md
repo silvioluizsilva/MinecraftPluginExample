@@ -7,11 +7,11 @@ Projeto consumidor completo para estudar e iniciar novos plugins baseados no Plu
 - JDK 25 ou 26, mantendo compatibilidade de bytecode com Java 25;
 - Maven 3.9.6 ou superior;
 - Paper API `26.2.build.65-beta`;
-- acesso de leitura ao GitHub Packages do PluginBase.
+- build conjunto pela raiz `Codigo-Fonte` ou PluginBase instalado localmente na mesma versão.
 
 ## Compilação
 
-Configure no Maven um token GitHub com `read:packages` para o repositório `silvioluizsilva/MinecraftPluginBase`. Depois, nesta pasta:
+Na raiz `Codigo-Fonte`, execute:
 
 ```text
 mvn clean verify
