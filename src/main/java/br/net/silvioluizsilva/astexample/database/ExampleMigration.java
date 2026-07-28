@@ -1,7 +1,7 @@
-package br.net.silvioluizsilva.pluginexample.database;
+package br.net.silvioluizsilva.astexample.database;
 
-import br.net.silvioluizsilva.pluginbase.api.DatabaseAccess;
-import br.net.silvioluizsilva.pluginbase.api.DatabaseMigration;
+import br.net.silvioluizsilva.astatinecore.api.DatabaseAccess;
+import br.net.silvioluizsilva.astatinecore.api.DatabaseMigration;
 import org.bukkit.plugin.Plugin;
 
 import java.io.IOException;
@@ -12,7 +12,7 @@ import java.util.Objects;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
- * Entrega as migrações do consumidor ao executor central do PluginBase.
+ * Entrega as migrações do consumidor ao executor central do AstatineCore.
  */
 public final class ExampleMigration {
 

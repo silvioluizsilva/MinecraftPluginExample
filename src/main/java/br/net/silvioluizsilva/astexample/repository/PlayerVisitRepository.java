@@ -1,6 +1,6 @@
-package br.net.silvioluizsilva.pluginexample.repository;
+package br.net.silvioluizsilva.astexample.repository;
 
-import br.net.silvioluizsilva.pluginbase.api.DatabaseAccess;
+import br.net.silvioluizsilva.astatinecore.api.DatabaseAccess;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

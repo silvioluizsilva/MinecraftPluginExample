@@ -1,11 +1,11 @@
-package br.net.silvioluizsilva.pluginexample.service;
+package br.net.silvioluizsilva.astexample.service;
 
-import br.net.silvioluizsilva.pluginbase.api.DatabaseAccess;
-import br.net.silvioluizsilva.pluginbase.api.PluginBaseApi;
-import br.net.silvioluizsilva.pluginexample.PluginExample;
-import br.net.silvioluizsilva.pluginexample.database.ExampleMigration;
-import br.net.silvioluizsilva.pluginexample.language.ExampleMessages;
-import br.net.silvioluizsilva.pluginexample.repository.PlayerVisitRepository;
+import br.net.silvioluizsilva.astatinecore.api.DatabaseAccess;
+import br.net.silvioluizsilva.astatinecore.api.AstatineCoreApi;
+import br.net.silvioluizsilva.astexample.AstExample;
+import br.net.silvioluizsilva.astexample.database.ExampleMigration;
+import br.net.silvioluizsilva.astexample.language.ExampleMessages;
+import br.net.silvioluizsilva.astexample.repository.PlayerVisitRepository;
 import org.bukkit.entity.Player;
 import org.junit.jupiter.api.Test;
 
@@ -19,8 +19,8 @@ final class GreetingServiceTest {
 
     @Test
     void greetsWithoutDatabaseWorkWhenPersistenceIsDisabled() {
-        PluginExample plugin = mock(PluginExample.class);
-        PluginBaseApi api = mock(PluginBaseApi.class);
+        AstExample plugin = mock(AstExample.class);
+        AstatineCoreApi api = mock(AstatineCoreApi.class);
         DatabaseAccess database = mock(DatabaseAccess.class);
         PlayerVisitRepository repository = mock(PlayerVisitRepository.class);
         ExampleMessages messages = mock(ExampleMessages.class);

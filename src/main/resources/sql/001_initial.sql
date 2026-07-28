@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS pluginexample_players (
+CREATE TABLE IF NOT EXISTS astexample_players (
     player_uuid CHAR(36) NOT NULL,
     player_name VARCHAR(16) NOT NULL,
     visits BIGINT UNSIGNED NOT NULL DEFAULT 0,

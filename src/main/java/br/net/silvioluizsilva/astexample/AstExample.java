@@ -1,27 +1,27 @@
-package br.net.silvioluizsilva.pluginexample;
+package br.net.silvioluizsilva.astexample;
 
-import br.net.silvioluizsilva.pluginbase.api.PluginBaseApi;
-import br.net.silvioluizsilva.pluginbase.api.PluginBaseProvider;
-import br.net.silvioluizsilva.pluginbase.api.DatabaseAccess;
-import br.net.silvioluizsilva.pluginexample.command.ExampleCommand;
-import br.net.silvioluizsilva.pluginexample.config.ExampleConfig;
-import br.net.silvioluizsilva.pluginexample.database.ExampleMigration;
-import br.net.silvioluizsilva.pluginexample.language.ExampleMessages;
-import br.net.silvioluizsilva.pluginexample.listener.PlayerJoinListener;
-import br.net.silvioluizsilva.pluginexample.repository.PlayerVisitRepository;
-import br.net.silvioluizsilva.pluginexample.service.GreetingService;
+import br.net.silvioluizsilva.astatinecore.api.AstatineCoreApi;
+import br.net.silvioluizsilva.astatinecore.api.AstatineCoreProvider;
+import br.net.silvioluizsilva.astatinecore.api.DatabaseAccess;
+import br.net.silvioluizsilva.astexample.command.ExampleCommand;
+import br.net.silvioluizsilva.astexample.config.ExampleConfig;
+import br.net.silvioluizsilva.astexample.database.ExampleMigration;
+import br.net.silvioluizsilva.astexample.language.ExampleMessages;
+import br.net.silvioluizsilva.astexample.listener.PlayerJoinListener;
+import br.net.silvioluizsilva.astexample.repository.PlayerVisitRepository;
+import br.net.silvioluizsilva.astexample.service.GreetingService;
 import io.papermc.paper.plugin.lifecycle.event.types.LifecycleEvents;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
 
 /**
- * Demonstra como um plugin independente consome os recursos do PluginBase.
+ * Demonstra como um plugin independente consome os recursos do AstatineCore.
  *
  * @author Sílvio Luiz da Silva
  * @version 0.0.1
  */
-public final class PluginExample extends JavaPlugin {
+public final class AstExample extends JavaPlugin {
 
     private GreetingService greetingService;
 
@@ -46,9 +46,9 @@ public final class PluginExample extends JavaPlugin {
 
         ExampleConfig config = ExampleConfig.from(getConfig());
         ExampleMessages messages = new ExampleMessages(this, config.language());
-        PluginBaseApi api = PluginBaseProvider.get();
-        if (!PluginBaseApi.API_VERSION.equals(api.apiVersion())) {
-            throw new IllegalStateException("Versão incompatível da API PluginBase: " + api.apiVersion());
+        AstatineCoreApi api = AstatineCoreProvider.get();
+        if (!AstatineCoreApi.API_VERSION.equals(api.apiVersion())) {
+            throw new IllegalStateException("Versão incompatível da API AstatineCore: " + api.apiVersion());
         }
 
         DatabaseAccess database = api.database(this);
@@ -56,13 +56,13 @@ public final class PluginExample extends JavaPlugin {
         ExampleMigration migration = new ExampleMigration(this, database);
         if (api.settings().databaseEnabled()) {
             database.whenConnected().thenRun(() -> api.scheduler().runAsync(this, migration::migrate)).exceptionally(failure -> {
-                getSLF4JLogger().error("Falha ao aplicar as migrações iniciais do PluginExample.", failure);
+                getSLF4JLogger().error("Falha ao aplicar as migrações iniciais do AstExample.", failure);
                 return null;
             });
         }
         greetingService = new GreetingService(this, api, repository, messages, migration);
         getServer().getPluginManager().registerEvents(new PlayerJoinListener(greetingService, config), this);
-        getSLF4JLogger().info("PluginExample habilitado com PluginBase API {}.", api.apiVersion());
+        getSLF4JLogger().info("AstExample habilitado com AstatineCore API {}.", api.apiVersion());
     }
 
     /**
@@ -70,7 +70,7 @@ public final class PluginExample extends JavaPlugin {
      */
     @Override
     public void onDisable() {
-        PluginBaseProvider.find().ifPresent(api -> api.scheduler().cancelAll(this));
+        AstatineCoreProvider.find().ifPresent(api -> api.scheduler().cancelAll(this));
     }
 
     private void saveBundledResource(String path) {

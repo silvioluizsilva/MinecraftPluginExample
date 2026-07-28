@@ -1,4 +1,4 @@
-package br.net.silvioluizsilva.pluginexample.language;
+package br.net.silvioluizsilva.astexample.language;
 
 import net.kyori.adventure.text.minimessage.MiniMessage;
 import net.kyori.adventure.text.minimessage.tag.resolver.Placeholder;

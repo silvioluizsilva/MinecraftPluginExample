@@ -1,4 +1,4 @@
-prefix: "<gray>[<aqua>PluginExample</aqua>]</gray> "
+prefix: "<gray>[<aqua>AstExample</aqua>]</gray> "
 hello: "<green>Olá, <name>!</green> <gray>Você entrou <visits> vez(es).</gray>"
 database-disabled: "<yellow>O banco compartilhado está desativado; a visita não será persistida.</yellow>"
 internal-error: "<red>Não foi possível concluir a operação.</red>"
